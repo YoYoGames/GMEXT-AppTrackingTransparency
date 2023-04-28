@@ -1,10 +1,10 @@
 {
   "FolderOrderSettings": [
+    {"name":"App Tracking Transparency","order":2,"path":"folders/App Tracking Transparency.yy",},
     {"name":"YoYo Extensions Assets","order":1,"path":"folders/YoYo Extensions Assets.yy",},
     {"name":"Font","order":1,"path":"folders/YoYo Extensions Assets/Font.yy",},
     {"name":"Objects","order":2,"path":"folders/YoYo Extensions Assets/Objects.yy",},
     {"name":"Sprites","order":3,"path":"folders/YoYo Extensions Assets/Sprites.yy",},
-    {"name":"App Tracking Transparency","order":2,"path":"folders/App Tracking Transparency.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"Spr_YoYo_button","order":1,"path":"sprites/Spr_YoYo_button/Spr_YoYo_button.yy",},
