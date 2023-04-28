@@ -1,15 +1,7 @@
 
 draw_set_color(c_white)
-
-draw_set_valign(fa_center)
-draw_set_halign(fa_center)
-draw_set_font(Font_Yoyo_50)
-
-var X = room_width/2, Y = room_height/2
-draw_text(X,Y-100,"App Tracking Transparency")
-
 draw_set_valign(fa_top)
-draw_set_font(Font_Yoyo_30)
+draw_set_font(Font_YoYo_20)
 
 if(os_type == os_ios)
 {
