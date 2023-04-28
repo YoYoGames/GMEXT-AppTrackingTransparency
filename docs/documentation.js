@@ -15,7 +15,7 @@ function AppTrackingTransparency_available() {}
  * @desc The function is a one-time request to authorize or deny access to app-related data that can be used for tracking the user or the device. The system remembers the user’s choice and doesn’t prompt again unless a user uninstalls and then reinstalls the app on the device.
  * 
  * @event social
- * @desc Triggered after the user has given an answer to the authorization prompt. After this you can use ${function.AppTrackingTransparency_status} to check the authorization status.
+ * @desc Triggered once the user has responded to the authorization prompt, you can now check the authorization status using ${function.AppTrackingTransparency_status}.
  * @member {string} type The value `"AppTrackingTransparency"`
  * @event_end
  * 
