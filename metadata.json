@@ -1,0 +1,14 @@
+[
+    {
+        "projectFile": "source/AppTrackingTransparency_gml/App Tracking Transparency.yyp",
+        "extensionFile": "source/AppTrackingTransparency_gml/extensions/ext_AppTrackingTransparency/ext_AppTrackingTransparency.yy",
+        "packageId": "com.yoyogames.apptrackingtransparency",
+        "packageName": "App Tracking Transparency Ext",
+        "packageVersion": "1.1.0",
+        "includeFolders": null,
+        "includeResources": null,
+        "excludeFolders": null,
+        "excludeResources": null,
+        "format": "LTS22"
+    }
+]
