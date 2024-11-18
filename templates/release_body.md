@@ -1,33 +1,21 @@
 ## IMPORTANT
 
-- This extension version will be compatible with the GM 2022.0.1 LTSr1 (upon release)
-- This extension is to be used with GM 2023.1 and future releases.
-- Requires Steamworks SDK version 1.55 (or recent)
-- Works with **Windows**, **macOS** and **Ubuntu**.
-- macOS (VM) not supported
+- This extension is to be used with GM 2022.8 and future releases.
+- Works only with iOS targets.
 
 ## CHANGES SINCE ${releaseOldVersion}
 
-https://github.com/YoYoGames/GMEXT-Steamworks/compare/${releaseOldVersion}...${releaseNewVersion}
+https://github.com/YoYoGames/GMEXT-AppTrackingTransparency/compare/${releaseOldVersion}...${releaseNewVersion}
 
 ## DESCRIPTION
 
-Steamworks is a set of tools and services that help game developers and publishers build their games and get the most out of distributing on Steam.
+From now on Apple requires developers for transparently requesting users for app tracking functionalities. This extension will provide a simple interface for handle those requests.
 
 ## FEATURES 
 
-- General API
-- Achievements
-- Statistics
-- Leaderboards
-- Cloud Storage
-- DLC
-- UGC
-- Network
-- Matchmaking
-- Lobby
-- Inventory
-- Input
+- Checking if tracking request is available
+- Checking the tracking status for the current app
+- Requesting data tracking for the current app
 
 ## DOCUMENTATION
 
