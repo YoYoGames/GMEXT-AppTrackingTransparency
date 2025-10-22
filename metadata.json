@@ -1,18 +1,1 @@
-{
-    "gitHubUrl": "https://github.com/YoYoGames/GMEXT-AppTrackingTransparency",
-    "projectFile": "source/AppTrackingTransparency_gml/App Tracking Transparency.yyp",
-    "projectVersion": "LTS22",
-    "releaseTemplate": "templates/release_body.md",
-    "extensionMetaData": [
-        {
-            "extensionFile": "source/AppTrackingTransparency_gml/extensions/ext_AppTrackingTransparency/ext_AppTrackingTransparency.yy",
-            "packageId": "com.yoyogames.apptrackingtransparency",
-            "packageName": "App Tracking Transparency Ext",
-            "packageVersion": "1.1.0",
-            "packageFormat": "LTS22",
-            "includeFolders": null,
-            "includeResources": null,
-            "excludeResources": null
-        }
-    ]
-}
+{"gitHubUrl":"https://github.com/YoYoGames/GMEXT-AppTrackingTransparency","projectFile":"source/AppTrackingTransparency_gml/App Tracking Transparency.yyp","projectVersion":"LTS22","releaseTemplate":"templates/release_body.md","extensionMetaData":[{"extensionFile":"source/AppTrackingTransparency_gml/extensions/ext_AppTrackingTransparency/ext_AppTrackingTransparency.yy","packageId":"com.yoyogames.apptrackingtransparency","packageName":"App Tracking Transparency Ext","packageVersion":"1.1.1","packageFormat":"LTS22","includeFolders":null,"includeResources":null,"excludeFolders":null,"excludeResources":null,"postRemovals":[]}],"documentationFolder":null}

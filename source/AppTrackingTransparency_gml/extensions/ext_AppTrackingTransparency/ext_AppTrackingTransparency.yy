@@ -14,7 +14,7 @@
   "copyToTargets":4,
   "description":"",
   "exportToGame":true,
-  "extensionVersion":"1.1.0",
+  "extensionVersion":"1.1.1",
   "files":[
     {"$GMExtensionFile":"v1","%Name":"","constants":[
         {"$GMExtensionConstant":"","%Name":"AppTrackingTransparency_NotDetermined","hidden":false,"name":"AppTrackingTransparency_NotDetermined","resourceType":"GMExtensionConstant","resourceVersion":"2.0","value":"0",},
