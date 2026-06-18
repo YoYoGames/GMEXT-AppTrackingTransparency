@@ -1,0 +1,29 @@
+[gml_api]
+module GMAppTrackingTransparency;
+
+// Returns true when AppTrackingTransparency is available on the current OS.
+[global, bind = typed_gml]
+function AppTrackingTransparency_available(): bool;
+
+// Displays Apple's tracking authorization prompt when the status is
+// NotDetermined. The callback is invoked as:
+//
+//     callback(status)
+//
+// where status is one of AppTrackingTransparencyStatus.
+[global, bind = typed_gml]
+function AppTrackingTransparency_request(callback: func): unit;
+
+// Returns the current authorization status.
+[global, bind = typed_gml]
+function AppTrackingTransparency_status(): int32;
+
+[global, bind = typed_gml]
+enum AppTrackingTransparencyStatus:int32
+{
+    Unsupported = -4,
+    NotDetermined = 0,
+    Authorized = 1,
+    Denied = 2,
+    Restricted = 3,
+}
