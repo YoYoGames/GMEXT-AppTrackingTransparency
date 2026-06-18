@@ -16,7 +16,7 @@
   "exportToGame":true,
   "extensionVersion":"0.0.1",
   "files":[
-    {"$GMExtensionFile":"v1","%Name":"","constants":[],"copyToTargets":-1,"filename":"GMAppTrackingTransparency.ext","final":"","functions":[
+    {"$GMExtensionFile":"v1","%Name":"","constants":[],"copyToTargets":4,"filename":"GMAppTrackingTransparency.ext","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"AppTrackingTransparency_available","argCount":0,"args":[],"documentation":"@returns {Real}","externalName":"__EXT_NATIVE__AppTrackingTransparency_available","help":"","hidden":false,"kind":4,"name":"AppTrackingTransparency_available","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"__AppTrackingTransparency_request","argCount":2,"args":[1,2,],"documentation":"@param {Pointer} _arg_buffer\r\n@param {Real} _arg_buffer_length\r\n@returns {Real}","externalName":"__EXT_NATIVE__AppTrackingTransparency_request","help":"","hidden":true,"kind":4,"name":"__AppTrackingTransparency_request","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"AppTrackingTransparency_status","argCount":0,"args":[],"documentation":"@returns {Real}","externalName":"__EXT_NATIVE__AppTrackingTransparency_status","help":"","hidden":false,"kind":4,"name":"AppTrackingTransparency_status","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
@@ -39,10 +39,12 @@
   "iosSystemFrameworkEntries":[
     {"$GMExtensionFrameworkEntry":"","%Name":"AppTrackingTransparency.framework","embed":0,"name":"AppTrackingTransparency.framework","resourceType":"GMExtensionFrameworkEntry","resourceVersion":"2.0","weakReference":false,},
   ],
-  "iosThirdPartyFrameworkEntries":[],
+  "iosThirdPartyFrameworkEntries":[
+    {"$GMExtensionFrameworkEntry":"","%Name":"GMAppTrackingTransparency.xcframework","embed":0,"name":"GMAppTrackingTransparency.xcframework","resourceType":"GMExtensionFrameworkEntry","resourceVersion":"2.0","weakReference":false,},
+  ],
   "license":"",
   "maccompilerflags":"",
-  "maclinkerflags":"-ObjC",
+  "maclinkerflags":"\"-ObjC\"",
   "macsourcedir":"",
   "name":"GMAppTrackingTransparency",
   "options":[
