@@ -37,6 +37,29 @@ namespace
         // Defensive fallback for any future status added by Apple.
         return kATTUnsupported;
     }
+
+    // Apple only presents the ATT prompt while the app is active. Requests made
+    // earlier (e.g. during first-launch startup) are dropped, so defer them.
+    // Must be called on the main queue.
+    void RunWhenAppActive(void (^block)(void))
+    {
+        if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive)
+        {
+            block();
+            return;
+        }
+
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        __block id observer = [center addObserverForName:UIApplicationDidBecomeActiveNotification
+                                                  object:nil
+                                                   queue:[NSOperationQueue mainQueue]
+                                              usingBlock:^(NSNotification *)
+        {
+            [center removeObserver:observer];
+            observer = nil;
+            block();
+        }];
+    }
 }
 
 @implementation GMAppTrackingTransparency
@@ -63,22 +86,25 @@ namespace
     g_requestCallback = callback;
 
     // Apple's authorization prompt is UI work, so always initiate it on the
-    // main queue. The callback replaces the old Social Async event.
+    // main queue, once the app is active. The callback replaces the old
+    // Social Async event.
     dispatch_async(dispatch_get_main_queue(), ^{
-        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:
-            ^(ATTrackingManagerAuthorizationStatus status)
-        {
-            const int32_t normalizedStatus = NormalizeTrackingStatus(status);
+        RunWhenAppActive(^{
+            [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:
+                ^(ATTrackingManagerAuthorizationStatus status)
+            {
+                const int32_t normalizedStatus = NormalizeTrackingStatus(status);
 
-            // Keep the GameMaker callback invocation on the main queue too.
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (g_requestCallback)
-                {
-                    g_requestCallback.call(normalizedStatus);
-                    g_requestCallback = nil;
-                }
-            });
-        }];
+                // Keep the GameMaker callback invocation on the main queue too.
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (g_requestCallback)
+                    {
+                        g_requestCallback.call(normalizedStatus);
+                        g_requestCallback = nil;
+                    }
+                });
+            }];
+        });
     });
 }
 
