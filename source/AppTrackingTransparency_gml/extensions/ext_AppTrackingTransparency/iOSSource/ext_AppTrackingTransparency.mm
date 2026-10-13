@@ -1,9 +1,14 @@
 
 #import "ext_AppTrackingTransparency.h"
 
-const int EVENT_OTHER_SOCIAL = 70;
-extern int CreateDsMap( int _num, ... );
-extern void CreateAsynEventWithDSMap(int dsmapindex, int event_index);
+extern "C" void dsMapClear(int _dsMap );
+extern "C" int dsMapCreate();
+extern "C" void dsMapAddInt(int _dsMap, char* _key, int _value);
+extern "C" void dsMapAddDouble(int _dsMap, char* _key, double _value);
+extern "C" void dsMapAddString(int _dsMap, char* _key, char* _value);
+
+extern "C" void createSocialAsyncEventWithDSMap(int dsmapindex);
+
 extern UIViewController *g_controller;
 extern UIView *g_glView;
 extern int g_DeviceWidth;
@@ -26,8 +31,12 @@ extern int g_DeviceHeight;
 	
 	[ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status)
 	{
-		int dsMapIndex = CreateDsMap(1,"type", 0.0, "AppTrackingTransparency");
-			CreateAsynEventWithDSMap(dsMapIndex,EVENT_OTHER_SOCIAL);
+		dispatch_async(dispatch_get_main_queue(), ^{
+			int dsMapIndex = dsMapCreate();
+			dsMapAddString(dsMapIndex, (char*)"type", (char*)"AppTrackingTransparency");
+			dsMapAddDouble(dsMapIndex, (char*)"status", (double)status);
+			createSocialAsyncEventWithDSMap(dsMapIndex);
+		});
 	}];
 }
 
